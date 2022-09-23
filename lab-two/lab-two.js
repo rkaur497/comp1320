@@ -67,7 +67,7 @@ const monthCodeMap = {
 //let day = 1;
 
 function getDayOfTheWeek(year, month, day) {
-    let lastTwoDigitsOfTheYear = year.slice(-2);
+    let lastTwoDigitsOfTheYear = year % 100;
     //console.log(lastTwoDigitsOfTheYear);
 
     let find12s = Math.round(parseInt(lastTwoDigitsOfTheYear) / 12);
@@ -85,27 +85,17 @@ function getDayOfTheWeek(year, month, day) {
 }
 
 
-
-const dayOfWeek = getDayOfTheWeek(year, month, day);
-console.log("The day of the given date is " + dayOfWeek);
-
-
-
-
-
 function makeCalender(calendarYear) {
     const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let monthsInYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
     for (let i = 0; i < months.length; i++) {
         for (let j = 1; j <= months[i]; j++) {
-            console.log(`${months[i]}-${months[j]}-${calendarYear} is a ${getDayOfTheWeek()}`)
+            console.log(`${months[i]}-${monthsInYear[i]}-${calendarYear} is a ${getDayOfTheWeek(2022, monthsInYear[i], j)}`)
         }
     }
     
 }
 
 
-
-module.exports = {getDayOfTheWeek};
-module.exports = {makeCalender};
+module.exports = {getDayOfTheWeek, makeCalender};

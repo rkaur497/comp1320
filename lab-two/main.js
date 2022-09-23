@@ -4,8 +4,10 @@ var year = readline.question("Please enter the year: ");
 var month = readline.question("Please enter the month: ");
 var day = readline.question("Please enter the day: ");
  
-const {getDayOfTheWeek} = require("./lab-two").getDayOfTheWeek;
-const {makeCalender} = require("./lab-two").makeCalender;
+const { getDayOfTheWeek, makeCalender } = require("./lab-two");
+// const {getDayOfTheWeek} = require("./lab-two").getDayOfTheWeek;
+// const {makeCalender} = require("./lab-two").makeCalender;
+
 
 getDayOfTheWeek(year, month, day);
 makeCalender(2022);
